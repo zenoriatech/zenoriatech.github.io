@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 - ZENORIA TECH, LLC</title>
+    <meta name="description" content="ZENORIA TECH应用程序和服务的隐私政策。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: #1a1a2e;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #64b5f6;
+        }
+        
+        .privacy-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .privacy-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .privacy-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .privacy-shield {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            background: #4CAF50;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: relative;
+            margin: 2rem auto;
+        }
+        
+        .privacy-shield::before {
+            content: "🔒";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+        }
+        
+        .section {
+            padding: 4rem 0;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #1a1a2e;
+        }
+        
+        .privacy-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+        
+        .promises {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .promises h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1a1a2e;
+        }
+        
+        .promise-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .promise-item {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .promise-item::before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+        
+        .technical-details {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            line-height: 1.8;
+        }
+        
+        .contact-section {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-section a {
+            color: #64b5f6;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            background: #0f0f1e;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .privacy-hero h1 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">ZENORIA TECH</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="index.html#services">服务</a></li>
+                <li><a href="index.html#about">关于我们</a></li>
+                <li><a href="index.html#contact">联系我们</a></li>
+                <li><a href="#privacy">隐私政策</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="privacy-hero">
+        <div class="container">
+            <div class="privacy-shield"></div>
+            <h1>隐私政策</h1>
+            <p>您的隐私是我们的优先事项</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>隐私优先设计</h2>
+            <div class="privacy-features">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>100% 本地存储</h3>
+                    <p>所有药物数据都保存在您的设备上。没有云服务器，没有外部存储。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✈️</div>
+                    <h3>离线工作</h3>
+                    <p>无需互联网连接。您的提醒随时随地都能工作。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚫</div>
+                    <h3>无跟踪</h3>
+                    <p>我们不跟踪您的使用情况，不收集分析数据，不监控您的药物。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔓</div>
+                    <h3>无需账户</h3>
+                    <p>立即开始使用药贴心。无需注册，无需邮箱，无需个人信息。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>您的数据，您做主</h3>
+                    <p>随时导出或删除您的数据。您拥有完全的控制权。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="promises">
+        <div class="container">
+            <h2>我们的隐私承诺</h2>
+            <div class="promise-list">
+                <div class="promise-item">
+                    我们永远不会上传您的药物数据
+                </div>
+                <div class="promise-item">
+                    我们永远不会与第三方共享数据
+                </div>
+                <div class="promise-item">
+                    我们永远不会要求个人信息
+                </div>
+                <div class="promise-item">
+                    我们永远不会跟踪您的应用使用情况
+                </div>
+                <div class="promise-item">
+                    我们永远不会访问您的数据
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>技术细节</h2>
+            <div class="technical-details">
+                <p>药贴心使用您的设备上进行本地存储。所有数据都存储在您设备的安全容器中，并包含在您的设备备份中。除了通过Apple App Store的可选高级功能外，不会进行任何网络连接。</p>
+                
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #1a1a2e;">数据收集</h3>
+                <p>我们不收集、存储或传输任何个人信息、健康数据或使用分析。我们的应用程序设计为完全离线运行。</p>
+                
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #1a1a2e;">第三方服务</h3>
+                <p>我们的应用程序不集成任何第三方分析、广告或数据收集服务。</p>
+                
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #1a1a2e;">数据安全</h3>
+                <p>由于所有数据都保留在您的设备上，因此受到您设备内置安全功能的保护，包括设备加密和访问控制。</p>
+                
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #1a1a2e;">隐私政策变更</h3>
+                <p>此隐私政策的任何变更都将通过应用更新传达并发布在此页面上。当前政策的生效日期列在下方。</p>
+                
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #1a1a2e;">联系我们</h3>
+                <p>如果您对我们的隐私做法有任何疑问或担忧，请随时通过以下方式联系我们：</p>
+                <ul style="margin-top: 1rem; padding-left: 2rem;">
+                    <li>公司名称：ZENORIA TECH, LLC</li>
+                    <li>注册地：华盛顿州有限责任公司</li>
+                    <li>邮箱：support@zenoriatech.com</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2>关于隐私有疑问？</h2>
+            <p>请联系我们：<a href="mailto:support@zenoriatech.com">support@zenoriatech.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ZENORIA TECH, LLC. 版权所有</p>
+            <p>华盛顿州有限责任公司</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">最后更新：2025年8月9日</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
