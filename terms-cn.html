@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务条款 - ZENORIA TECH, LLC</title>
+    <meta name="description" content="ZENORIA TECH应用程序和服务的服务条款。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: #1a1a2e;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #64b5f6;
+        }
+        
+        .terms-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .terms-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .terms-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .terms-icon {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            background: #4CAF50;
+            border-radius: 20px;
+            position: relative;
+            margin: 2rem auto;
+        }
+        
+        .terms-icon::before {
+            content: "📋";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+        }
+        
+        .terms-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 0;
+        }
+        
+        .term-section {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .term-header {
+            background: #1a1a2e;
+            color: white;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .term-number {
+            background: #64b5f6;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .term-header h2 {
+            font-size: 1.5rem;
+        }
+        
+        .term-body {
+            padding: 2rem;
+            line-height: 1.8;
+        }
+        
+        .important-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .important-notice::before {
+            content: "⚠️";
+            font-size: 1.2rem;
+        }
+        
+        .important-text {
+            color: #856404;
+            font-weight: 500;
+        }
+        
+        .liability-text {
+            font-weight: bold;
+            color: #dc3545;
+            margin: 1rem 0;
+            text-transform: uppercase;
+        }
+        
+        .contact-section {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-section a {
+            color: #64b5f6;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            background: #0f0f1e;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .terms-hero h1 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            .term-header {
+                padding: 1rem;
+            }
+            .term-body {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">ZENORIA TECH</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="index.html#services">服务</a></li>
+                <li><a href="index.html#about">关于我们</a></li>
+                <li><a href="index.html#contact">联系我们</a></li>
+                <li><a href="privacy-cn.html">隐私政策</a></li>
+                <li><a href="#terms">服务条款</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="terms-hero">
+        <div class="container">
+            <div class="terms-icon"></div>
+            <h1>服务条款</h1>
+            <p>使用我们的服务前请仔细阅读这些条款</p>
+        </div>
+    </section>
+
+    <section class="terms-content">
+        <div class="container">
+            
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">1</div>
+                    <h2>接受条款</h2>
+                </div>
+                <div class="term-body">
+                    <p>使用药贴心即表示您同意受这些服务条款约束。如果您不同意这些条款，请不要使用本应用程序。</p>
+                </div>
+            </div>
+
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">2</div>
+                    <h2>应用目的与限制</h2>
+                </div>
+                <div class="term-body">
+                    <p>药贴心是一款药物提醒应用程序。它不用于诊断、治疗、治愈或预防任何疾病。本应用的提醒功能是协助药物依从性的工具，但不保证正确的药物使用。</p>
+                </div>
+            </div>
+
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">3</div>
+                    <h2>医疗免责声明</h2>
+                </div>
+                <div class="term-body">
+                    <p>本应用程序不提供医疗建议。请始终咨询合格的医疗保健专业人员以获取医疗建议和治疗决定。切勿因为在本应用中阅读的内容而忽视专业医疗建议或延迟寻求医疗建议。</p>
+                    <div class="important-notice">
+                        <span class="important-text">此部分特别重要</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">4</div>
+                    <h2>用户责任</h2>
+                </div>
+                <div class="term-body">
+                    <p>您有责任：</p>
+                    <ul style="margin: 1rem 0; padding-left: 2rem;">
+                        <li>输入准确的药物信息</li>
+                        <li>遵循您的医疗保健提供者的指示</li>
+                        <li>维护您设备的安全性</li>
+                        <li>确保通知正确配置</li>
+                        <li>适当响应提醒</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">5</div>
+                    <h2>隐私与数据</h2>
+                </div>
+                <div class="term-body">
+                    <p>我们尊重您的隐私。所有药物数据都本地存储在您的设备上。我们不收集、传输或共享您的个人健康信息。更多详情请参阅我们的隐私政策。</p>
+                </div>
+            </div>
+
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">6</div>
+                    <h2>责任限制</h2>
+                </div>
+                <div class="term-body">
+                    <div class="liability-text">
+                        在法律允许的最大范围内，药贴心或其开发者在任何情况下均不对任何间接、附带、特殊、后果性或惩罚性损害承担责任，包括但不限于利润损失、数据丢失、使用损失或其他无形损失。
+                    </div>
+                    <div class="important-notice">
+                        <span class="important-text">此部分特别重要</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">7</div>
+                    <h2>赔偿</h2>
+                </div>
+                <div class="term-body">
+                    <p>您同意赔偿并使药贴心及其开发者免受因您使用应用程序或违反这些条款而产生的任何索赔、损害或费用的损害。</p>
+                </div>
+            </div>
+
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">8</div>
+                    <h2>知识产权</h2>
+                </div>
+                <div class="term-body">
+                    <p>药贴心的所有内容、功能和特性均由其开发者拥有，并受国际版权、商标和其他知识产权法律保护。</p>
+                </div>
+            </div>
+
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">9</div>
+                    <h2>修改</h2>
+                </div>
+                <div class="term-body">
+                    <p>我们保留随时修改这些条款的权利。更改后继续使用应用程序即表示接受新条款。</p>
+                </div>
+            </div>
+
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">10</div>
+                    <h2>终止</h2>
+                </div>
+                <div class="term-body">
+                    <p>我们可能因任何原因，包括违反这些条款，立即终止或暂停您对应用程序的访问，无需事先通知。</p>
+                </div>
+            </div>
+
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">11</div>
+                    <h2>适用法律</h2>
+                </div>
+                <div class="term-body">
+                    <p>这些条款应受您居住地管辖区法律管辖和解释，不考虑其法律冲突条款。</p>
+                </div>
+            </div>
+
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">12</div>
+                    <h2>联系信息</h2>
+                </div>
+                <div class="term-body">
+                    <p>如对这些服务条款有疑问，请通过 <a href="mailto:support@zenoriatech.com" style="color: #64b5f6;">support@zenoriatech.com</a> 联系我们。</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2>对我们的条款有疑问？</h2>
+            <p>请联系我们：<a href="mailto:support@zenoriatech.com">support@zenoriatech.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ZENORIA TECH, LLC. 版权所有</p>
+            <p>华盛顿州有限责任公司</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">最后更新：2025年8月9日</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
