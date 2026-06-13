@@ -169,6 +169,21 @@
             .nav-links { display: none; }
             .mockup-body { height: 240px; }
         }
+        /* pricing */
+        .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; align-items: stretch; }
+        .plan { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 2rem 1.6rem; display: flex; flex-direction: column; text-align: center; }
+        .plan.featured { border-color: rgba(108,140,255,0.55); background: rgba(108,140,255,0.06); }
+        .plan .tag { font-size: .75rem; color: var(--accent); font-weight: 700; letter-spacing: .5px; text-transform: uppercase; min-height: 1rem; }
+        .plan h3 { font-size: 1.2rem; margin: .4rem 0; }
+        .plan .price { font-size: 2.4rem; font-weight: 800; }
+        .plan .price small { font-size: .9rem; font-weight: 500; color: var(--muted); }
+        .plan .devices { color: var(--muted); margin: .3rem 0 1rem; font-size: .95rem; }
+        .plan ul { list-style: none; text-align: left; margin: 0 auto 1.4rem; font-size: .92rem; color: var(--muted); display: inline-block; }
+        .plan ul li { margin: .35rem 0; }
+        .plan ul li::before { content: "✓ "; color: var(--green); font-weight: 700; }
+        .plan .buy { margin-top: auto; display: inline-block; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; font-weight: 600; padding: .7rem 1.4rem; border-radius: 10px; }
+        .plan.featured .buy { box-shadow: 0 8px 30px rgba(108,140,255,0.35); }
+        .pricing-note { text-align: center; color: var(--muted); font-size: .9rem; margin-top: 1.5rem; }
     </style>
 </head>
 
@@ -178,8 +193,9 @@
             <div class="brand">ZENORIA<span>·</span>TECH</div>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#how">How it works</a></li>
-                <li><a href="https://github.com/zenoriatech/whisperer/releases/latest/download/Inka.dmg" class="nav-cta">Download</a></li>
+                <li><a href="https://github.com/zenoriatech/inka/releases/latest/download/Inka.dmg" class="nav-cta">Download</a></li>
             </ul>
         </nav>
     </header>
@@ -191,7 +207,7 @@
             <p class="tagline">Hold a key, speak, release — text appears at your cursor.</p>
             <p class="sub">Recognition runs entirely on your Mac. No cloud, no account, no subscription. Your voice never leaves the machine.</p>
             <div class="cta-row">
-                <a class="btn-primary" href="https://github.com/zenoriatech/whisperer/releases/latest/download/Inka.dmg">Download for Mac</a>
+                <a class="btn-primary" href="https://github.com/zenoriatech/inka/releases/latest/download/Inka.dmg">Download for Mac</a>
             </div>
             <p class="req">Apple Silicon (M1 or later) · macOS 14+ · Free while in testing</p>
 
@@ -258,12 +274,59 @@
         </div>
     </section>
 
+    <section class="block" id="pricing">
+        <div class="container">
+            <p class="eyebrow">Pricing</p>
+            <h2>One-time purchase</h2>
+            <div class="plans">
+                <!-- TODO: replace each .buy href with the Lemon Squeezy checkout URL for that variant -->
+                <div class="plan">
+                    <div class="tag">&nbsp;</div>
+                    <h3>Personal</h3>
+                    <div class="price">$19</div>
+                    <div class="devices">1 device</div>
+                    <ul>
+                        <li>All features</li>
+                        <li>Lifetime updates</li>
+                        <li>14-day free trial</li>
+                    </ul>
+                    <a class="buy" href="https://github.com/zenoriatech/inka/releases/latest/download/Inka.dmg">Start free trial</a>
+                </div>
+                <div class="plan featured">
+                    <div class="tag">Most popular</div>
+                    <h3>Standard</h3>
+                    <div class="price">$29</div>
+                    <div class="devices">3 devices</div>
+                    <ul>
+                        <li>All features</li>
+                        <li>Lifetime updates</li>
+                        <li>14-day free trial</li>
+                    </ul>
+                    <a class="buy" href="https://github.com/zenoriatech/inka/releases/latest/download/Inka.dmg">Start free trial</a>
+                </div>
+                <div class="plan">
+                    <div class="tag">&nbsp;</div>
+                    <h3>Pro</h3>
+                    <div class="price">$49</div>
+                    <div class="devices">5 devices</div>
+                    <ul>
+                        <li>All features</li>
+                        <li>Lifetime updates</li>
+                        <li>14-day free trial</li>
+                    </ul>
+                    <a class="buy" href="https://github.com/zenoriatech/inka/releases/latest/download/Inka.dmg">Start free trial</a>
+                </div>
+            </div>
+            <p class="pricing-note">Try free for 14 days — no account needed. Buy a license when you're ready.</p>
+        </div>
+    </section>
+
     <section class="block">
         <div class="container">
             <div class="final">
                 <h2>Start dictating today</h2>
-                <p>Free while in testing. No account required.</p>
-                <a class="btn-primary" href="https://github.com/zenoriatech/whisperer/releases/latest/download/Inka.dmg">Download for Mac</a>
+                <p>14-day free trial. No account required.</p>
+                <a class="btn-primary" href="https://github.com/zenoriatech/inka/releases/latest/download/Inka.dmg">Download for Mac</a>
                 <p class="req">Apple Silicon (M1 or later) · macOS 14+</p>
             </div>
         </div>
