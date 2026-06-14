@@ -6,86 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inka: Private, on-device dictation for macOS</title>
     <meta name="description" content="Hold a key to talk, or tap for hands-free; text appears at your cursor. Inka runs entirely on your Mac: no cloud, no account, your audio never leaves the machine. Multilingual: switch or mix languages mid-sentence.">
+    <link rel="stylesheet" href="/styles.css">
     <style>
-        :root {
-            --bg: #07080f;
-            --bg-soft: #0d1020;
-            --card: rgba(255, 255, 255, 0.035);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text: #eef0f7;
-            --muted: #9aa0b6;
-            --accent: #6c8cff;
-            --accent2: #9a6cff;
-            --green: #45e0a0;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        a { color: inherit; text-decoration: none; }
-        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-
-        /* ---- header ---- */
-        header {
-            position: fixed; top: 0; width: 100%; z-index: 100;
-            backdrop-filter: blur(14px);
-            background: rgba(7, 8, 15, 0.6);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        nav { display: flex; justify-content: space-between; align-items: center; height: 62px; }
-        .brand { font-weight: 700; letter-spacing: .5px; font-size: 1.05rem; }
-        .brand span { color: var(--accent); }
-        .nav-links { display: flex; gap: 2rem; list-style: none; font-size: .92rem; }
-        .nav-links a { color: var(--muted); transition: color .2s; }
-        .nav-links a:hover { color: var(--text); }
-        .nav-cta {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: #fff; padding: .5rem 1.1rem; border-radius: 9px; font-size: .88rem; font-weight: 600;
-        }
-
-        /* ---- hero ---- */
-        .hero { position: relative; padding: 11rem 0 6rem; text-align: center; overflow: hidden; }
-        .hero::before {
-            content: ''; position: absolute; top: -30%; left: 50%; transform: translateX(-50%);
-            width: 900px; height: 900px; pointer-events: none;
-            background: radial-gradient(circle, rgba(108, 140, 255, 0.18) 0%, rgba(154, 108, 255, 0.08) 35%, transparent 65%);
-        }
-        .hero-inner { position: relative; }
-        .pill {
-            display: inline-flex; align-items: center; gap: .5rem;
-            font-size: .82rem; color: var(--muted);
-            border: 1px solid var(--card-border); border-radius: 999px;
-            padding: .35rem 1rem; margin-bottom: 1.4rem; background: var(--card);
-        }
-        .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
+        /* Inka page-specific styles (shared design system lives in /styles.css) */
         .hero-brand { font-size: 1.4rem; font-weight: 800; letter-spacing: .5px; color: var(--accent); margin-bottom: .6rem; }
-        h1 {
-            font-size: 4.2rem; font-weight: 800; letter-spacing: -2px; line-height: 1.05;
-            background: linear-gradient(180deg, #fff 30%, #b9c0e0 100%);
-            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 1.2rem;
-        }
-        .tagline { font-size: 1.35rem; color: var(--text); margin-bottom: .6rem; font-weight: 500; }
-        .sub { font-size: 1.05rem; color: var(--muted); max-width: 600px; margin: 0 auto 2.5rem; }
         .cta-row { display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: #fff; font-weight: 600; font-size: 1.05rem;
-            padding: .95rem 2rem; border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(108, 140, 255, 0.35);
-            transition: transform .2s, box-shadow .2s;
-        }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 50px rgba(108, 140, 255, 0.45); }
         .req { font-size: .85rem; color: var(--muted); margin-top: 1.3rem; }
 
         /* ---- product mockup ---- */
@@ -170,28 +95,6 @@
         .proof-zero { color: var(--green); font-weight: 700; }
         .proof-cap { text-align: center; color: var(--muted); font-size: .92rem; margin: 1.3rem auto 0; max-width: 560px; }
 
-        /* ---- sections ---- */
-        section.block { padding: 6rem 0; }
-        .eyebrow { text-align: center; color: var(--accent); font-weight: 600; font-size: .9rem; letter-spacing: .5px; text-transform: uppercase; margin-bottom: .8rem; }
-        h2 { text-align: center; font-size: 2.6rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 3.5rem; }
-        h2.tight { margin-bottom: 1rem; }
-        .section-sub { text-align: center; color: var(--muted); max-width: 620px; margin: 0 auto 3.2rem; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
-        .feature {
-            background: var(--card); border: 1px solid var(--card-border); border-radius: 16px;
-            padding: 2rem; transition: transform .25s, border-color .25s, background .25s;
-        }
-        .feature:hover { transform: translateY(-4px); border-color: rgba(108,140,255,0.4); background: rgba(108,140,255,0.05); }
-        .feature .ic {
-            width: 44px; height: 44px; border-radius: 11px; margin-bottom: 1.1rem;
-            display: flex; align-items: center; justify-content: center;
-            background: linear-gradient(135deg, rgba(108,140,255,0.18), rgba(154,108,255,0.18));
-            border: 1px solid rgba(108,140,255,0.25);
-        }
-        .feature .ic svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
-        .feature h3 { font-size: 1.18rem; margin-bottom: .5rem; font-weight: 650; }
-        .feature p { color: var(--muted); font-size: .96rem; }
         .feature .who-tag { display: block; font-size: .8rem; color: var(--accent); font-weight: 600; margin-bottom: .4rem; text-transform: uppercase; letter-spacing: .4px; }
 
         /* ---- comparison ---- */
@@ -237,13 +140,7 @@
         .final h2 { margin-bottom: 1rem; }
         .final p { color: var(--muted); margin-bottom: 2rem; }
 
-        footer { padding: 3rem 0; text-align: center; color: var(--muted); font-size: .9rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 2rem; }
-        footer a { color: var(--accent); }
-
         @media (max-width: 680px) {
-            h1 { font-size: 2.8rem; }
-            h2 { font-size: 2rem; }
-            .nav-links { display: none; }
             .mockup-body { height: 240px; }
             .plan.featured { transform: none; }
         }
