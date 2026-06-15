@@ -4,6 +4,14 @@
     <title>Inka</title>
     <!--NEWEST-->
     <item>
+      <title>0.6.9</title>
+      <pubDate>Mon, 15 Jun 2026 03:22:43 +0000</pubDate>
+      <sparkle:version>0.6.9</sparkle:version>
+      <sparkle:shortVersionString>0.6.9</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/zenoriatech/inka/releases/download/v0.6.9/Inka-0.6.9.dmg" sparkle:edSignature="ot/SB/wU7OZ3VF+dwcbqZCEc2GPcOJq39ilw6EJaEd/SYBBTzPzby6jmpzqgpmiEecSjbM8epOmejuErlGsCBg==" length="13036847" type="application/octet-stream"/>
+    </item>
+    <item>
       <title>0.6.8</title>
       <pubDate>Mon, 15 Jun 2026 02:13:02 +0000</pubDate>
       <sparkle:version>0.6.8</sparkle:version>
