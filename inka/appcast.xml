@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Inka</title>
+    <!--NEWEST-->
+    <item>
+      <title>0.6.7</title>
+      <pubDate>Mon, 15 Jun 2026 00:03:37 +0000</pubDate>
+      <sparkle:version>0.6.7</sparkle:version>
+      <sparkle:shortVersionString>0.6.7</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/zenoriatech/inka/releases/download/v0.6.7/Inka-0.6.7.dmg" sparkle:edSignature="gyMn6bUo1vDbW/qx8swOb/4OChDD1T6Zu3tDcaCZl347vHC/upStJ3Qw78Dw2IahZQsMFhEREtlZ3w3BwYP8DQ==" length="13037567" type="application/octet-stream"/>
+    </item>
+  </channel>
+</rss>
