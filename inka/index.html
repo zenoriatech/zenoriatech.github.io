@@ -164,6 +164,14 @@
         .promo-banner { display: inline-flex; align-items: center; gap: .75rem; flex-wrap: wrap; justify-content: center; margin: .2rem auto 1.9rem; padding: .75rem 1.3rem; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; font-size: 1.1rem; font-weight: 600; box-shadow: 0 12px 34px rgba(108,140,255,0.4); }
         .promo-banner .promo-badge { font-size: .72rem; font-weight: 800; letter-spacing: 1.2px; background: rgba(255,255,255,0.22); padding: .28rem .66rem; border-radius: 999px; }
         .promo-banner b { font-weight: 800; }
+        .promo-banner.urgent { background: linear-gradient(135deg, #ff8a3d, #ff4d4d); box-shadow: 0 12px 34px rgba(255,77,77,0.42); }
+        .trial-cta { text-align: center; color: var(--muted); margin: -.4rem 0 1.7rem; font-size: 1.02rem; }
+        .trial-cta b { color: var(--text); font-weight: 700; }
+        .plan .save { display: inline-block; margin-left: .5rem; background: var(--green); color: #07210f; font-size: .72rem; font-weight: 800; letter-spacing: .3px; padding: .18rem .5rem; border-radius: 999px; vertical-align: middle; }
+        .plan .buy.ghost { background: none; color: var(--text); border: 1px solid var(--card-border); box-shadow: none; }
+        .plan .buy.ghost:hover { border-color: var(--accent); color: #fff; }
+        .plan ul li.hi { color: var(--accent); font-weight: 700; }
+        .plan ul li.hi::before { color: var(--accent); }
     </style>
 </head>
 
@@ -353,45 +361,52 @@
                 <span class="promo-badge">LAUNCH SALE</span>
                 <span>Save up to <b>25%</b> · ends <b>July&nbsp;15</b> · <b id="promo-countdown">limited time</b></span>
             </div>
-            <script>(function(){var end=new Date('2026-07-15T23:59:59'),el=document.getElementById('promo-countdown');if(!el)return;var d=Math.ceil((end-new Date())/86400000);el.textContent=d>1?d+' days left':(d===1?'1 day left':(d===0?'ends today':'ended'));}());</script>
+            <script>(function(){var end=new Date('2026-07-15T23:59:59'),el=document.getElementById('promo-countdown'),banner=document.querySelector('.promo-banner');if(!el)return;var ms=end-new Date();if(ms<=0){el.textContent='ended';return;}var days=Math.ceil(ms/86400000),hours=Math.ceil(ms/3600000);if(days<=3){el.textContent=hours+' hours left';if(banner)banner.classList.add('urgent');}else{el.textContent=days+' days left';}}());</script>
+            <p class="trial-cta">Start with a <b>free 14-day trial</b> — no account, no credit card.</p>
             <div class="plans">
                 <!-- .buy hrefs = Lemon Squeezy checkout per variant. Same URL in test & live; starts taking real payments once the store is activated. -->
                 <div class="plan">
                     <div class="tag">&nbsp;</div>
                     <h3>Personal</h3>
-                    <div class="price">$15.99 <small class="was">$19.99</small></div>
+                    <div class="price">$15.99 <small class="was">$19.99</small> <span class="save">Save $4</span></div>
                     <div class="devices">1 device · launch price</div>
                     <ul>
-                        <li>All features</li>
+                        <li>100% on-device &amp; private</li>
+                        <li>~0.2s, auto-punctuated</li>
+                        <li>Chinese, English, Japanese — even mixed</li>
                         <li>Lifetime updates</li>
                     </ul>
-                    <a class="buy" href="https://inkaapp.lemonsqueezy.com/checkout/buy/91cb22ff-dcd1-419b-a201-19347f004b37">Buy now</a>
+                    <a class="buy ghost" href="https://inkaapp.lemonsqueezy.com/checkout/buy/91cb22ff-dcd1-419b-a201-19347f004b37">Buy now</a>
                 </div>
                 <div class="plan featured">
                     <div class="tag">Most popular</div>
                     <h3>Standard</h3>
-                    <div class="price">$29.99 <small class="was">$39.99</small></div>
+                    <div class="price">$29.99 <small class="was">$39.99</small> <span class="save">Save $10 · 25%</span></div>
                     <div class="devices">3 devices · launch price</div>
                     <ul>
-                        <li>All features</li>
+                        <li>100% on-device &amp; private</li>
+                        <li>~0.2s, auto-punctuated</li>
+                        <li>Chinese, English, Japanese — even mixed</li>
                         <li>Lifetime updates</li>
-                        <li>Best value for multiple Macs</li>
+                        <li class="hi">Best value for multiple Macs</li>
                     </ul>
                     <a class="buy" href="https://inkaapp.lemonsqueezy.com/checkout/buy/dff6b6b3-9014-40ba-913a-5e273452cf99">Buy now</a>
                 </div>
                 <div class="plan">
                     <div class="tag">&nbsp;</div>
                     <h3>Pro</h3>
-                    <div class="price">$39.99 <small class="was">$49.99</small></div>
+                    <div class="price">$39.99 <small class="was">$49.99</small> <span class="save">Save $10</span></div>
                     <div class="devices">5 devices · launch price</div>
                     <ul>
-                        <li>All features</li>
+                        <li>100% on-device &amp; private</li>
+                        <li>~0.2s, auto-punctuated</li>
+                        <li>Chinese, English, Japanese — even mixed</li>
                         <li>Lifetime updates</li>
                     </ul>
-                    <a class="buy" href="https://inkaapp.lemonsqueezy.com/checkout/buy/df99659d-2064-437f-a510-7438b0a2d98b">Buy now</a>
+                    <a class="buy ghost" href="https://inkaapp.lemonsqueezy.com/checkout/buy/df99659d-2064-437f-a510-7438b0a2d98b">Buy now</a>
                 </div>
             </div>
-            <p class="pricing-note">Launch sale — introductory pricing through July 15, 2026; regular prices ($19.99 / $39.99 / $49.99) after. Try free for 14 days: no account, no card.</p>
+            <p class="pricing-note">Launch sale — introductory pricing through July 15, 2026; regular prices ($19.99 / $39.99 / $49.99) apply after.</p>
         </div>
     </section>
 
