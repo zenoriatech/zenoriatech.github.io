@@ -150,10 +150,12 @@
         .plan { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 2rem 1.6rem; display: flex; flex-direction: column; text-align: center; }
         .plan.featured { border-color: rgba(108,140,255,0.55); background: rgba(108,140,255,0.08); transform: scale(1.04); box-shadow: 0 20px 60px rgba(108,140,255,0.18); position: relative; z-index: 1; }
         .plan .tag { font-size: .75rem; color: var(--accent); font-weight: 700; letter-spacing: .5px; text-transform: uppercase; min-height: 1rem; }
+        .plan.featured .tag { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); margin: 0; min-height: 0; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; padding: .32rem .9rem; border-radius: 999px; font-size: .7rem; font-weight: 800; letter-spacing: .6px; box-shadow: 0 6px 20px rgba(108,140,255,.5); }
         .plan h3 { font-size: 1.2rem; margin: .4rem 0; }
-        .plan .price { font-size: 2.4rem; font-weight: 800; }
+        .plan .price { font-size: 2.4rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: .5rem; }
+        .plan .price-meta { display: inline-flex; flex-direction: column; align-items: flex-start; gap: .12rem; }
         .plan .price small { font-size: .9rem; font-weight: 500; color: var(--muted); }
-        .plan .price .was { text-decoration: line-through; opacity: .75; margin-left: .35rem; }
+        .plan .price .was { font-size: .9rem; font-weight: 500; color: var(--muted); text-decoration: line-through; opacity: .8; }
         .plan .devices { color: var(--muted); margin: .3rem 0 1rem; font-size: .95rem; }
         .plan ul { list-style: none; text-align: left; margin: 0 auto 1.4rem; font-size: .92rem; color: var(--muted); display: inline-block; }
         .plan ul li { margin: .35rem 0; }
@@ -166,9 +168,10 @@
         .promo-banner b { font-weight: 700; color: var(--text); }
         .promo-banner.urgent { background: rgba(255,90,70,0.10); border-color: rgba(255,120,80,0.45); }
         .promo-banner.urgent .promo-badge { color: #ff8a5c; background: rgba(255,120,80,0.18); }
-        .trial-cta { text-align: center; color: var(--muted); margin: -.4rem 0 1.7rem; font-size: 1.02rem; }
-        .trial-cta b { color: var(--text); font-weight: 700; }
-        .plan .save { display: inline-block; margin-left: .5rem; background: var(--green); color: #07210f; font-size: .72rem; font-weight: 800; letter-spacing: .3px; padding: .18rem .5rem; border-radius: 999px; vertical-align: middle; }
+        .trial-link { display: inline-block; margin: 0 auto .35rem; color: var(--accent); font-weight: 600; font-size: 1.05rem; border-bottom: 1px solid rgba(108,140,255,.45); padding-bottom: 2px; }
+        .trial-link:hover { color: #fff; border-bottom-color: #fff; }
+        .trial-sub { text-align: center; color: var(--muted); font-size: .85rem; margin: 0 0 1.7rem; }
+        .plan .save { display: inline-block; background: rgba(245,185,74,0.14); color: #f5b94a; font-size: .7rem; font-weight: 800; letter-spacing: .3px; padding: .12rem .42rem; border-radius: 6px; }
         .plan .buy.ghost { background: none; color: var(--text); border: 1px solid var(--card-border); box-shadow: none; }
         .plan .buy.ghost:hover { border-color: var(--accent); color: #fff; }
         .plan ul li.hi { color: var(--accent); font-weight: 700; }
@@ -242,18 +245,18 @@
                 <span>Save up to <b>25%</b> · ends <b>July&nbsp;15</b> · <b id="promo-countdown">limited time</b></span>
             </div>
             <script>(function(){var end=new Date('2026-07-15T23:59:59'),el=document.getElementById('promo-countdown'),banner=document.querySelector('.promo-banner');if(!el)return;var ms=end-new Date();if(ms<=0){el.textContent='ended';return;}var days=Math.ceil(ms/86400000),hours=Math.ceil(ms/3600000);if(days<=3){el.textContent=hours+' hours left';if(banner)banner.classList.add('urgent');}else{el.textContent=days+' days left';}}());</script>
-            <p class="trial-cta">Start with a <b>free 14-day trial</b> — no account, no credit card.</p>
+            <a class="trial-link" href="https://github.com/zenoriatech/inka/releases/latest/download/Inka.dmg">Start a free 14-day trial →</a>
+            <p class="trial-sub">No account, no credit card.</p>
             <div class="plans">
                 <!-- .buy hrefs = Lemon Squeezy checkout per variant. Same URL in test & live; starts taking real payments once the store is activated. -->
                 <div class="plan">
-                    <div class="tag">&nbsp;</div>
                     <h3>Personal</h3>
-                    <div class="price">$15.99 <small class="was">$19.99</small> <span class="save">Save 20%</span></div>
-                    <div class="devices">1 device · launch price</div>
+                    <div class="price">$15.99<span class="price-meta"><span class="was">$19.99</span><span class="save">−20%</span></span></div>
+                    <div class="devices">1 device</div>
                     <ul>
                         <li>100% on-device &amp; private</li>
                         <li>~0.2s, auto-punctuated</li>
-                        <li>Chinese, English, Japanese — even mixed</li>
+                        <li>Multilingual, even mixed</li>
                         <li>Lifetime updates</li>
                     </ul>
                     <a class="buy ghost" href="https://inkaapp.lemonsqueezy.com/checkout/buy/91cb22ff-dcd1-419b-a201-19347f004b37" target="_blank" rel="noopener">Buy now</a>
@@ -261,26 +264,25 @@
                 <div class="plan featured">
                     <div class="tag">Most popular</div>
                     <h3>Standard</h3>
-                    <div class="price">$29.99 <small class="was">$39.99</small> <span class="save">Save 25%</span></div>
-                    <div class="devices">3 devices · launch price</div>
+                    <div class="price">$29.99<span class="price-meta"><span class="was">$39.99</span><span class="save">−25%</span></span></div>
+                    <div class="devices">3 devices</div>
                     <ul>
                         <li>100% on-device &amp; private</li>
                         <li>~0.2s, auto-punctuated</li>
-                        <li>Chinese, English, Japanese — even mixed</li>
+                        <li>Multilingual, even mixed</li>
                         <li>Lifetime updates</li>
                         <li class="hi">Best value for multiple Macs</li>
                     </ul>
                     <a class="buy" href="https://inkaapp.lemonsqueezy.com/checkout/buy/dff6b6b3-9014-40ba-913a-5e273452cf99" target="_blank" rel="noopener">Buy now</a>
                 </div>
                 <div class="plan">
-                    <div class="tag">&nbsp;</div>
                     <h3>Pro</h3>
-                    <div class="price">$39.99 <small class="was">$49.99</small> <span class="save">Save 20%</span></div>
-                    <div class="devices">5 devices · launch price</div>
+                    <div class="price">$39.99<span class="price-meta"><span class="was">$49.99</span><span class="save">−20%</span></span></div>
+                    <div class="devices">5 devices</div>
                     <ul>
                         <li>100% on-device &amp; private</li>
                         <li>~0.2s, auto-punctuated</li>
-                        <li>Chinese, English, Japanese — even mixed</li>
+                        <li>Multilingual, even mixed</li>
                         <li>Lifetime updates</li>
                     </ul>
                     <a class="buy ghost" href="https://inkaapp.lemonsqueezy.com/checkout/buy/df99659d-2064-437f-a510-7438b0a2d98b" target="_blank" rel="noopener">Buy now</a>
